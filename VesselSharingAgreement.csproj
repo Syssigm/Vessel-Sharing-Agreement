@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CF99F0D8-C0B0-4391-AF9F-5A1CC9D3867B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VesselSharingAgreement</RootNamespace>
+    <AssemblyName>VesselSharingAgreement</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=18.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.18.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Json, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c6752e45808247c2, processorArchitecture=MSIL">
+      <HintPath>..\packages\JSON.1.0.1\lib\net40\Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Json.NET.Web, Version=1.0.49.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Json.NET.Web.1.0.49\lib\portable45-net45+win8+wpa81\Json.NET.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddBillAddress.aspx" />
+    <Content Include="AddDBAAddress.aspx" />
+    <Content Include="Admin.aspx" />
+    <Content Include="css\bootstrap-datetimepicker.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\custom.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\intlTelInput.css" />
+    <Content Include="css\ionicons.css" />
+    <Content Include="css\ionicons.min.css" />
+    <Content Include="css\jquery.datetimepicker.css" />
+    <Content Include="css\prettyCheckable.css" />
+    <Content Include="CustomerRegistration.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="FinalVSA.aspx" />
+    <Content Include="images\finger-pressing-a-virtual-lock_1112-490.jpg" />
+    <Content Include="images\MetroUI-Apps-Calculator-icon.png" />
+    <Content Include="images\pexels-photo-326410.jpeg" />
+    <Content Include="images\pexels-photo-93106.jpeg" />
+    <Content Include="images\Price-img-01.png" />
+    <Content Include="images\TEUs-img-01.png" />
+    <Content Include="images\Voyage-img-01.png" />
+    <Content Include="js\bootstrap-datetimepicker.min.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\intlTelInput.js" />
+    <Content Include="js\jquery.bootstrap-responsive-tabs.min.js" />
+    <Content Include="js\jquery.datetimepicker.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\prettyCheckable-main.js" />
+    <Content Include="js\prettyCheckable.js" />
+    <Content Include="js\utils.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="classes\class.phpmailer.php" />
+    <Content Include="classes\class.smtp.php" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\ionicons.eot" />
+    <Content Include="fonts\ionicons.svg" />
+    <Content Include="fonts\ionicons.ttf" />
+    <Content Include="fonts\ionicons.woff" />
+    <Content Include="Main.Master" />
+    <Content Include="ReviewAndApproved.aspx" />
+    <Content Include="Scripts\json-serialize.js" />
+    <Content Include="Scripts\json-serialize.min.js" />
+    <Content Include="ShipRoute.aspx" />
+    <Content Include="ViewModifyVessel.aspx" />
+    <Content Include="VSAChangepassword.aspx" />
+    <None Include="Properties\PublishProfiles\containerVSA.syssigma.com - Web Deploy.pubxml" />
+    <Content Include="VSAadmin.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="images\1362.jpg" />
+    <Content Include="images\add-a-button-icon-56789.png" />
+    <Content Include="images\cancel.jpg" />
+    <Content Include="images\container-2568956_960_720.jpg" />
+    <Content Include="images\container-ship-560789_960_720.jpg" />
+    <Content Include="images\customer-register.png" />
+    <Content Include="images\dollar-2461576_960_720.png" />
+    <Content Include="images\Editicon.jpg" />
+    <Content Include="images\facebook-ico.png" />
+    <Content Include="images\facebook.png" />
+    <Content Include="images\flags%402x.png" />
+    <Content Include="images\flags.png" />
+    <Content Include="images\flags16.png" />
+    <Content Include="images\google-ico.png" />
+    <Content Include="images\googleplus.png" />
+    <Content Include="images\learnmore-section-bg.jpg" />
+    <Content Include="images\learnmore-section-bg.png" />
+    <Content Include="images\linkedin-ico.png" />
+    <Content Include="images\linkedin.png" />
+    <Content Include="images\mapping.png" />
+    <Content Include="images\save.jpg" />
+    <Content Include="images\silicon-img.png" />
+    <Content Include="images\slide-1.jpg" />
+    <Content Include="images\social-icons.png" />
+    <Content Include="images\solutions-section-bg.jpg" />
+    <Content Include="images\testimonials-icon.png" />
+    <Content Include="images\twitter-ico.png" />
+    <Content Include="images\twitter.png" />
+    <Content Include="images\vessel-operators-1.jpg" />
+    <Content Include="images\vessel-operators-2.jpg" />
+    <Content Include="images\vessel-operators-3.jpg" />
+    <Content Include="images\vessel-operators-4.jpg" />
+    <Content Include="images\vessel-operators-5.jpg" />
+    <Content Include="images\VSA-logo.png" />
+    <Content Include="images\vsa-partners-1.jpg" />
+    <Content Include="images\vsa-partners-10.jpg" />
+    <Content Include="images\vsa-partners-2.jpg" />
+    <Content Include="images\vsa-partners-3.jpg" />
+    <Content Include="images\vsa-partners-4.jpg" />
+    <Content Include="images\vsa-partners-5.jpg" />
+    <Content Include="images\vsa-partners-6.jpg" />
+    <Content Include="images\vsa-partners-7.jpg" />
+    <Content Include="images\vsa-partners-8.jpg" />
+    <Content Include="images\vsa-partners-9.jpg" />
+    <Content Include="images\youtube.png" />
+    <Content Include="PortRegistration.aspx" />
+    <Content Include="VesselApplication.aspx" />
+    <Content Include="VesselRegistration.aspx" />
+    <Content Include="VesselVoyageDetails.aspx" />
+    <Content Include="ViewModifyCustomer.aspx" />
+    <Content Include="ViewModifyPort.aspx" />
+    <Content Include="VSAArrangementFeeStructure.aspx" />
+    <Content Include="VsaInvite.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddBillAddress.aspx.cs">
+      <DependentUpon>AddBillAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddBillAddress.aspx.designer.cs">
+      <DependentUpon>AddBillAddress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddDBAAddress.aspx.cs">
+      <DependentUpon>AddDBAAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddDBAAddress.aspx.designer.cs">
+      <DependentUpon>AddDBAAddress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerRegistration.aspx.cs">
+      <DependentUpon>CustomerRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerRegistration.aspx.designer.cs">
+      <DependentUpon>CustomerRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FinalVSA.aspx.cs">
+      <DependentUpon>FinalVSA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinalVSA.aspx.designer.cs">
+      <DependentUpon>FinalVSA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_15thStreetPizzaVisitors.cs" />
+    <Compile Include="Models\VesselAgreement.cs" />
+    <Compile Include="Models\VSA_Address.cs" />
+    <Compile Include="Models\VSA_Config_Country_Code.cs" />
+    <Compile Include="Models\VSA_Config_Country_DialCode.cs" />
+    <Compile Include="Models\VSA_Config_CustomerType.cs" />
+    <Compile Include="Models\VSA_Config_Port.cs" />
+    <Compile Include="Models\VSA_Config_Zone_Code.cs" />
+    <Compile Include="Models\VSA_Currency.cs" />
+    <Compile Include="Models\VSA_Login.cs" />
+    <Compile Include="Models\VSA_Master_Customer.cs" />
+    <Compile Include="Models\VSA_Master_Customer_Addresses.cs" />
+    <Compile Include="Models\VSA_Master_Customer_and_CustomerTypes.cs" />
+    <Compile Include="Models\VSA_Master_Vessel.cs" />
+    <Compile Include="Models\VSA_Master_VSA_Arrangement_Fee.cs" />
+    <Compile Include="Models\VSA_RoleAccessLevels.cs" />
+    <Compile Include="Models\VSA_Txn_Invite.cs" />
+    <Compile Include="Models\VSA_Txn_Participant_Application.cs" />
+    <Compile Include="Models\VSA_Txn_Participant_Review_and_Allowable.cs" />
+    <Compile Include="Models\VSA_Txn_Participant_Review_and_Approved.cs" />
+    <Compile Include="Models\VSA_Txn_Tariff_Selection_Credit_Sharing_Structure.cs" />
+    <Compile Include="Models\VSA_Txn_VesselVoyage.cs" />
+    <Compile Include="Models\VSA_Txn_VesselVoyageTransitShipRoute.cs" />
+    <Compile Include="Models\VSA_Year.cs" />
+    <Compile Include="Models\VSA_Zone_Country_Code.cs" />
+    <Compile Include="NuGet.Modules\JsonHelper.cs" />
+    <Compile Include="PortRegistration.aspx.cs">
+      <DependentUpon>PortRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PortRegistration.aspx.designer.cs">
+      <DependentUpon>PortRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReviewAndApproved.aspx.cs">
+      <DependentUpon>ReviewAndApproved.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReviewAndApproved.aspx.designer.cs">
+      <DependentUpon>ReviewAndApproved.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShipRoute.aspx.cs">
+      <DependentUpon>ShipRoute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShipRoute.aspx.designer.cs">
+      <DependentUpon>ShipRoute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VesselApplication.aspx.cs">
+      <DependentUpon>VesselApplication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VesselApplication.aspx.designer.cs">
+      <DependentUpon>VesselApplication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VesselRegistration.aspx.cs">
+      <DependentUpon>VesselRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VesselRegistration.aspx.designer.cs">
+      <DependentUpon>VesselRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VesselVoyageDetails.aspx.cs">
+      <DependentUpon>VesselVoyageDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VesselVoyageDetails.aspx.designer.cs">
+      <DependentUpon>VesselVoyageDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModifyCustomer.aspx.cs">
+      <DependentUpon>ViewModifyCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewModifyCustomer.aspx.designer.cs">
+      <DependentUpon>ViewModifyCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModifyPort.aspx.cs">
+      <DependentUpon>ViewModifyPort.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewModifyPort.aspx.designer.cs">
+      <DependentUpon>ViewModifyPort.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModifyVessel.aspx.cs">
+      <DependentUpon>ViewModifyVessel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewModifyVessel.aspx.designer.cs">
+      <DependentUpon>ViewModifyVessel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VSAadmin.Master.cs">
+      <DependentUpon>VSAadmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VSAadmin.Master.designer.cs">
+      <DependentUpon>VSAadmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="VSAArrangementFeeStructure.aspx.cs">
+      <DependentUpon>VSAArrangementFeeStructure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VSAArrangementFeeStructure.aspx.designer.cs">
+      <DependentUpon>VSAArrangementFeeStructure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VSAChangepassword.aspx.cs">
+      <DependentUpon>VSAChangepassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VSAChangepassword.aspx.designer.cs">
+      <DependentUpon>VSAChangepassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VsaInvite.aspx.cs">
+      <DependentUpon>VsaInvite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VsaInvite.aspx.designer.cs">
+      <DependentUpon>VsaInvite.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50885</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50886/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
